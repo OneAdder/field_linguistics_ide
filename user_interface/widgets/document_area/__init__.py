@@ -1,0 +1,1 @@
+from field_linguistics_ide.user_interface.widgets.document_area.document_area import DocumentArea

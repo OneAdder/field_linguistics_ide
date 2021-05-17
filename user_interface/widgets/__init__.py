@@ -1,0 +1,2 @@
+from field_linguistics_ide.user_interface.widgets.document_area import DocumentArea
+from field_linguistics_ide.user_interface.widgets.dictionary_area import DictionaryArea
