@@ -19,7 +19,7 @@ setup(
     zip_safe=False,
     entry_points={
         'console_scripts': [
-            'field-lingustics-ide=field_linguistics_ide.user_interface.main:main',
+            'field-linguistics-ide=field_linguistics_ide.user_interface.main:main',
         ],
     },
     include_package_data=True,
