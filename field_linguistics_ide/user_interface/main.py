@@ -18,9 +18,6 @@ class UpdateButton(Qt.QPushButton):
         self._document_areas = document_areas
         self._dictionary_area = DictionaryArea.get_instance()
         self.pressed.connect(self.update)
-        # from pathlib import Path
-        # self.dictionary_area.model.dictionary.save(Path('/home/misha/Проекты/дисер/FieldLinguisticsIDE/proj/dictionary.json'))
-        # self.document_area.document.save(Path('/home/misha/Проекты/дисер/FieldLinguisticsIDE/proj/document.json'))
 
     def add_document_area(self, document_area: DocumentArea):
         self._document_areas.append(document_area)

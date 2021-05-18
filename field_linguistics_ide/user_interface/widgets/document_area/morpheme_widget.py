@@ -99,7 +99,6 @@ class MorphemeWidget(EditableWidgetsArea):
         self.layout.addWidget(self.dictionary_actions)
         self.split = IntSignal()
         self.text_widget.split.signal.connect(self.split.signal.emit)
-        # self.split.signal.connect(lambda x: print(x))
 
     def text(self) -> str:
         return self.text_widget.text()
