@@ -130,24 +130,24 @@ class TreeView(Qt.QTreeView):
     def dropEvent(self, event: QtGui.QDropEvent):
         item_index = self.indexAt(event.pos())
         item = self.model.itemFromIndex(item_index)
-        morpheme = self._current_row[0]
+        morpheme_item = self._current_row[0]
         if isinstance(item, MorphemeItem):
             parent_index = item_index.parent()
             parent = self.model.itemFromIndex(parent_index)
             parent.appendRow(self._current_row)
             self.model.dictionary.edit(
-                morpheme.dict_id, 'is_stem', item.morpheme.is_stem)
+                morpheme_item.morpheme.dict_id, 'is_stem', item.morpheme.is_stem)
         elif isinstance(item, FixedItem):
             item.appendRow(self._current_row)
             if item.text() == 'Stems':
                 self.model.dictionary.edit(
-                    morpheme.dict_id, 'is_stem', True)
+                    morpheme_item.morpheme.dict_id, 'is_stem', True)
             elif item.text() == 'Affixes':
                 self.model.dictionary.edit(
-                    morpheme.dict_id, 'is_stem', True)
+                    morpheme_item.morpheme.dict_id, 'is_stem', True)
             else:
                 self.model.dictionary.edit(
-                    morpheme.dict_id, 'is_stem', None)
+                    morpheme_item.morpheme.dict_id, 'is_stem', None)
         else:
             raise TypeError('{} instead of MorphemeItem '
                             'or FixedItem'.format(type(item)))

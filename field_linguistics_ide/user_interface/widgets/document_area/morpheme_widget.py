@@ -144,9 +144,14 @@ class MorphemeWidget(EditableWidgetsArea):
         self.update_document('gloss', self.gloss_widget)
         self.dictionary_actions.update()
 
+    def set_morpheme_dict_id_none(self, _):
+        self.morpheme.dict_id = None
+
     def connect_editable_labels(self):
         self.text_widget.editable.textEdited.connect(self.update_text)
         self.gloss_widget.editable.textEdited.connect(self.update_gloss)
+        self.text_widget.editable.textEdited.connect(self.set_morpheme_dict_id_none)
+        self.gloss_widget.editable.textEdited.connect(self.set_morpheme_dict_id_none)
 
     def delete_action(self):
         data = self._document_area.document.pop_morpheme(self.morpheme.id_)
