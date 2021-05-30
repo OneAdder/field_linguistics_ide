@@ -1,6 +1,6 @@
 from pathlib import Path
 from PySide2 import QtWidgets as Qt
-from field_linguistics_ide.user_interface.widgets.common import Signal, StrSignal
+from field_linguistics_ide.user_interface.signals import Signal, StrSignal
 
 
 class ProjectDialog(Qt.QDialog):

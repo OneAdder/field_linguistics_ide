@@ -1,4 +1,4 @@
-from PySide2 import QtCore, QtWidgets as Qt
+from PySide2 import QtWidgets as Qt
 
 
 class ScrollArea(Qt.QScrollArea):
@@ -9,19 +9,3 @@ class ScrollArea(Qt.QScrollArea):
         # layout inside the scroll area
         self.flay = Qt.QVBoxLayout(content_widget)
         self.setWidgetResizable(True)
-
-
-class Signal(QtCore.QObject):
-    signal = QtCore.Signal()
-
-
-class IntSignal(QtCore.QObject):
-    signal = QtCore.Signal(int)
-
-
-class BoolSignal(QtCore.QObject):
-    signal = QtCore.Signal(bool)
-
-
-class StrSignal(QtCore.QObject):
-    signal = QtCore.Signal(str)

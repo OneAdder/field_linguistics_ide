@@ -4,7 +4,7 @@ from contextlib import contextmanager
 from PySide2 import QtGui, QtWidgets as Qt
 from field_linguistics_ide.types_ import Line, Morpheme, Token
 from field_linguistics_ide.user_interface.items import HSpacer
-from field_linguistics_ide.user_interface.widgets.common import Signal
+from field_linguistics_ide.user_interface.signals import Signal
 from field_linguistics_ide.user_interface.widgets.document_area.common import EditableLabel, EditableWidgetsArea
 from field_linguistics_ide.user_interface.widgets.document_area.token_widget import TokenWidget
 

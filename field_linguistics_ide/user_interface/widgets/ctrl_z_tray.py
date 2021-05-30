@@ -1,6 +1,3 @@
-from PySide2 import QtWidgets as Qt
-
-
 class CtrlZTray:
     _self = None
 

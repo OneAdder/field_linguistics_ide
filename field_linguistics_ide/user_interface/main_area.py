@@ -1,5 +1,5 @@
 from PySide2 import QtWidgets as Qt
-from field_linguistics_ide.user_interface.widgets.common import Signal
+from field_linguistics_ide.user_interface.signals import Signal
 
 
 class MainArea(Qt.QTabWidget):

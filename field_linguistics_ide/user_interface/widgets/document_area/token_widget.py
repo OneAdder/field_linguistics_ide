@@ -1,7 +1,7 @@
 from typing import Iterable, Optional
 from PySide2 import QtCore, QtGui, QtWidgets as Qt
 from field_linguistics_ide.types_ import Morpheme, Token
-from field_linguistics_ide.user_interface.widgets.common import Signal, IntSignal
+from field_linguistics_ide.user_interface.signals import IntSignal
 from field_linguistics_ide.user_interface.widgets.document_area.common import Tray
 from field_linguistics_ide.user_interface.widgets.document_area.morpheme_widget import MorphemeWidget
 

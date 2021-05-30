@@ -5,7 +5,8 @@ from PySide2 import QtGui, QtWidgets as Qt
 
 from field_linguistics_ide.types_ import Document, Line, Morpheme, Token
 from field_linguistics_ide.user_interface.items import VSpacer
-from field_linguistics_ide.user_interface.widgets.common import ScrollArea, Signal
+from field_linguistics_ide.user_interface.signals import Signal
+from field_linguistics_ide.user_interface.widgets.common import ScrollArea
 from field_linguistics_ide.user_interface.widgets.dictionary_area import DictionaryArea
 from field_linguistics_ide.user_interface.widgets.document_area.common import Tray
 from field_linguistics_ide.user_interface.widgets.document_area.morpheme_widget import MorphemeWidget
