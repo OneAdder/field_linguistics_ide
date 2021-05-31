@@ -7,9 +7,10 @@ from PySide2 import QtGui, QtWidgets as Qt
 from field_linguistics_ide.user_interface.templates.main_window import Ui_MainWindow
 from field_linguistics_ide.user_interface.widgets import DictionaryArea, DocumentArea
 from field_linguistics_ide.loaders.json_loader import JsonLoader
+from field_linguistics_ide.loaders.csv_loader import CSVLoader
 from field_linguistics_ide.types_ import Document, Morpheme, MorphemesDictionary, Token, Line
 from field_linguistics_ide.user_interface.load_dialog import ProjectDialog
-from field_linguistics_ide.user_interface.main_area import MainArea
+from field_linguistics_ide.user_interface.widgets.main_area import MainArea
 
 
 class UpdateButton(Qt.QPushButton):
@@ -34,6 +35,7 @@ class App(Qt.QMainWindow, Ui_MainWindow):
         self.setupUi(self)
         self.parent = parent
         self.actionFrom_JSON.triggered.connect(self.load_json)
+        self.actionFrom_CSV.triggered.connect(self.load_csv)
         self.project_dir: Optional[Path] = None
         self._document_areas: List[DocumentArea] = []
         self.dictionary_area = DictionaryArea(MorphemesDictionary())
@@ -137,11 +139,22 @@ class App(Qt.QMainWindow, Ui_MainWindow):
         except FileNotFoundError:
             pass
 
+    def load_csv(self):
+        file_name = Qt.QFileDialog.getOpenFileName(
+            self, 'Import', str(Path.home()))
+        try:
+            path = Path(file_name[0])
+            loader = CSVLoader(path, self.dictionary_area.model)
+            loader.load()
+            self.display_document(loader.document)
+        except FileNotFoundError:
+            pass
+
     def display_document(self, document: Document):
         # draw in scroll area
         document_area = DocumentArea(document)
         document_area.display()
-        self.tab_area.addTab(document_area, 'docname')
+        self.add_document_area(document_area)
 
     def display_dictionary(self):
         self.dictionary_area.display()

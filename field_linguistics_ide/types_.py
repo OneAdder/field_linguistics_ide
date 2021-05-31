@@ -102,7 +102,6 @@ class MorphemesDictionary(_Dictionary):
         for dict_id, item_dict in dictionary_dict.items():
             self.update({dict_id: Morpheme(**item_dict)})
             self._gid = dict_id
-        print()
 
 
 class Document:

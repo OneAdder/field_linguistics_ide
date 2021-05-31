@@ -98,7 +98,7 @@ class DictionaryModel(QtGui.QStandardItemModel):
                 self.edit_morpheme(morpheme)
             return
         morpheme_dict_id = self.dictionary.find(morpheme)
-        if morpheme_dict_id:
+        if morpheme_dict_id is not None:
             morpheme.dict_id = morpheme_dict_id
             self.edit_morpheme(morpheme)
         else:
